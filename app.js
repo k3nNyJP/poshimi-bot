@@ -10,7 +10,7 @@ client.on("ready", () => {
 
 client.on("message", async (msg) => {
   if (
-    msg.author.tag !== client.user.tag &&
+    !msg.author.bot &&
     reactionWordList.some((word) => msg.content.includes(word))
   ) {
     msg.channel.send(Math.random() * 100 > 1 ? "ぽしみ〜" : "ぽやしみ〜");
